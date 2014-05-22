@@ -17,7 +17,8 @@ int main(int argc, char *argv[])
         a = malloc((sizeof(int))*n);
         srand((a-((int*)0))+n*3);
         for(i = 0; i < n; i++)
-            a[i] = rand();
+            scanf("%d", a+i);
+            //a[i] = rand();
         sort(a, n, sizeof(int), cmp);
         for(i = 0; i < n; i++)
             printf("%d ", a[i]);

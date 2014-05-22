@@ -80,8 +80,8 @@ void funnel_push(Funnel *f){
     }
 }
 void sort(void *ptr, size_t nmemb, size_t size, cmp_t cmp){
-    cacheline = pow(nmemb, 2./3);
-    childK = pow(nmemb, 1./3);
+    cacheline = 64;
+    childK = pow(nmemb, 1./3)+1;
     funnel_comparator = cmp;
     struct Funnel *f;
     f = funnel_create(ptr, nmemb, size);
