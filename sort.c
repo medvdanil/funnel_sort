@@ -1,5 +1,6 @@
 #include"sort.h"
 #include<math.h>
+#define BUFFER_SIZE 64*1024
 inline unsigned min(unsigned a, unsigned b){
     return a < b ? a : b;
 }
@@ -176,7 +177,7 @@ void sort(const char *filename, const char* outfile, size_t size, cmp_t cmp){
 
     statFun *fun_params = malloc(sizeof(statFun));
     fun_params->size = size;
-    fun_params->buffer_size = 64*1024 / size;
+    fun_params->buffer_size = BUFFER_SIZE / size;
     if( fun_params->buffer_size == 0)
         fun_params->buffer_size = 1;
     fun_params->childK = pow(nmemb, 1./3)+1;
