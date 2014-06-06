@@ -5,7 +5,5 @@
 #include <stdlib.h>
 #include <stdio.h>
 typedef int (*cmp_t)(const void *, const void *);
-void
-sort(void *ptr, size_t nmemb, size_t size, cmp_t cmp);
-
+void sort(const char *infile, const char* outfile, size_t size, cmp_t cmp);
 #endif /* INCLUDES_FUNNELSORT_SORT_H */
